@@ -1,6 +1,20 @@
 <h1>Welcome To Photogur!</h1>
-<%= link_to "Post a Picture!", "/pictures/new" %>
+
+<h2>Recent</h2>
+<ul>
+	<% @pictures.each do |p| %>
+	<li><%= link_to(p) do %>
+  		<%= p.title %>
+		<% end %>
+ 	<% end%>
+ 	</li>
+
+</ul>
+<h1><%= link_to "Post a Picture!", "/pictures/new" %></h1>
 <% @pictures.each do |p| %>
 	<p><%= p.title %>, <%= p.artist %></p>
 	<%= link_to image_tag(p.url), "/pictures/#{p.id}" %>
 <% end %>	
+
+
+
