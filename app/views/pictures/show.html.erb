@@ -1,3 +1,6 @@
 <h1>Currently viewing "<%= @picture.title %>"</h1>
 <p>Shot by <%= @picture.artist %></p>
-<img src="<%= @picture.url %>">
+<p><img src="<%= @picture.url %>"></p>
+
+
+<p><%= link_to "Back to Gallery", pictures_url %></p>
