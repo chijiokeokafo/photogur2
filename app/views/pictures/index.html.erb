@@ -18,3 +18,15 @@
 
 
 
+<h3>Here are some pictures from over a month ago!</h3>
+<ul>
+	<% @month.each do |m| %>
+	<li><%= link_to(m) do %>
+  		<%= m.title %>
+		<% end %>
+ 	<% end%>
+ 	</li>
+</ul>
+<p>There are <%= Picture.created_before(1.month.ago).count %> pictures uploaded from one month ago</p>
+
+

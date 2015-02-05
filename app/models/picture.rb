@@ -4,7 +4,7 @@ class Picture < ActiveRecord::Base
 	# end
 	scope :newest_first, -> { order(created_at: :desc)}
 	scope :most_recent_five, -> { order(created_at: :desc).limit(5) }
-	scope :created_before, -> (date) { where("created_at < ?")}
+	scope :created_before, -> (date) { where("created_at < ?", date)}
 	
 
 	# ORRRR
